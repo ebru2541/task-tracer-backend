@@ -20,3 +20,11 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
+from todo.views import TodoView
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register('todo', TodoView) 
+
+urlpatterns += router.urls
